@@ -18,7 +18,7 @@ const showAllBtn = document.querySelector('#show-all-btn');
 const inStockBtn = document.querySelector('#in-stock-btn');
 const onSaleBtn = document.querySelector('#on-sale-btn');
 
-/* 🔧 Filtrage générique */
+
 function filterProducts(type) {
   switch (type) {
     case 'stock':
@@ -30,7 +30,7 @@ function filterProducts(type) {
   }
 }
 
-/* 🔧 Affichage générique */
+
 function renderProducts(list, emptyMessage) {
   listEl.innerHTML = '';
 
@@ -53,7 +53,7 @@ function renderProducts(list, emptyMessage) {
   });
 }
 
-/* 🎯 Gestion des boutons et affichage */
+
 function handleDisplay(filterType) {
   const filtered = filterProducts(filterType);
 
@@ -66,10 +66,10 @@ function handleDisplay(filterType) {
   renderProducts(filtered, emptyMessages[filterType]);
 }
 
-/* 🧲 Écouteurs */
+
 showAllBtn.addEventListener('click', () => handleDisplay('all'));
 inStockBtn.addEventListener('click', () => handleDisplay('stock'));
 onSaleBtn.addEventListener('click', () => handleDisplay('sale'));
 
-// Affichage initial
+
 handleDisplay('all');

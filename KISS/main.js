@@ -10,7 +10,7 @@ const emptyStateEl = document.querySelector('#empty-state');
 
 let currentFilter = 'all';
 
-// filtres simples
+
 const filters = {
   all: task => true,
   active: task => !task.completed,
@@ -52,10 +52,10 @@ function renderTasks(filteredTasks, filterName) {
   });
 }
 
-// gestion des boutons
+
 document.querySelectorAll('.controls button').forEach(btn => {
   btn.addEventListener('click', () => updateTasksList(btn.id.split('-')[1]));
 });
 
-// affichage initial
+
 updateTasksList();
